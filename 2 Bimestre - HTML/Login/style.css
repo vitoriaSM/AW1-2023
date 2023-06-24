@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: 'Playfair', serif; 
+    font-size: 30px;
+    background: linear-gradient(to bottom, aqua, rgb(29, 91, 91));
+    background: rgb(101,216,223);
+background: -moz-linear-gradient(101deg, rgba(101,216,223,1) 22%, rgba(110,97,238,1) 52%, rgba(187,108,221,1) 85%);
+background: -webkit-linear-gradient(101deg, rgba(101,216,223,1) 22%, rgba(110,97,238,1) 52%, rgba(187,108,221,1) 85%);
+background: linear-gradient(101deg, rgba(101,216,223,1) 22%, rgba(110,97,238,1) 52%, rgba(187,108,221,1) 85%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#65d8df",endColorstr="#bb6cdd",GradientType=1);
+}
+
+main{
+    position: relative;
+    top: 1vh;
+    left: 1vw;
+    height: 98vh;
+    width: 98vw;
+    background-color: rgb(36, 49, 85);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerda > h1 {
+    color: rgb(175, 35, 240);
+}
+
+.esquerda > img{
+    width: 500px;
+    height: 500px;
+}
+
+.esquerda{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.direita{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card{
+    padding: 55px 20px;
+    background-color: rgba(0, 0, 0, 0.205);
+    border-radius: 20px;
+    width: 60%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+h4{
+    background: linear-gradient(to right, rgb(111, 187, 238), rgb(204, 143, 232));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+label{
+    color: rgba(196, 168, 168, 0.582);
+    font-size: 30px;
+    margin-top: 30px;
+    text-align: left    ;
+}
+
+input{
+    border-radius: 10px;
+    background-color: rgba(221, 219, 219, 0.164);
+    padding: 15px;
+}
+
+button{
+    border-radius: 10px;
+    background: rgb(101,216,223);
+background: linear-gradient(101deg, rgba(101,216,223,1) 22%, rgba(110,97,238,1) 52%, rgba(187,108,221,1) 85%);
+    padding: 10px;
+    margin: 10px;
+    width: 25vh;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 15px;
+    
+
+}
+
+@media only screen and (max-width: 600px){
+    .esquerda > h1{
+        display: none;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+
+}
