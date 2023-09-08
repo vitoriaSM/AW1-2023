@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+</head>
+<body>
+    <p name="p"></p>
+
+    <script>
+        var nome = prompt ("Qual o seu nome?");
+        var idade = prompt("Qual sua idade?");
+
+        var paragrafo = document.getElementsByName("p")[0];
+        paragrafo.style.textAlign = "center";
+        paragrafo.style.color = "blue";
+        paragrafo.style.fontSize = "10px";
+
+        paragrafo.innerText = ` O seu nome é ${nome} a sua idade é ${idade}`;
+        paragrafo.style.justifyContent = "center";
+
+    </script>
+</body>
+</html>
