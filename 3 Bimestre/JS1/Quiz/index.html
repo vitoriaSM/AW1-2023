@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz em Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz sobre Conhecimentos Gerais</h1>
+
+        <div class="question1">
+            <p>Pergunta 1: De quem é a famosa frase “Penso, logo existo”?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="Platão"> Platão</label>
+                <label class="option"><input type="radio" name="q1" value="Galileu Galilei"> Galileu Galilei</label>
+                <label class="option"><input type="radio" name="q1" value="Descartes"> Descartes</label>
+                <label class="option"><input type="radio" name="q1" value="Sócrates"> Sócrates</label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+
+        <div class="question2">
+            <p>Pergunta 2: De onde é a invenção do chuveiro elétrico?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="França"> França</label>
+                <label class="option"><input type="radio" name="q2" value="Inglaterra"> Inglaterra</label>
+                <label class="option"><input type="radio" name="q2" value="Brasil"> Brasil</label>
+                <label class="option"><input type="radio" name="q2" value="Austrália"> Austrália</label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+
+        <div class="question3">
+            <p>Pergunta 3: Em qual local da Ásia o português é língua oficial?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="Índia"> Índia</label>
+                <label class="option"><input type="radio" name="q3" value="Filipinas"> Filipinas</label>
+                <label class="option"><input type="radio" name="q3" value="Moçambique"> Moçambique</label>
+                <label class="option"><input type="radio" name="q3" value="Macau"> Macau</label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+
+        <div class="question4">
+            <p>Pergunta 4:  Júpiter e Plutão são os correlatos romanos de quais deuses gregos?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="AreseHermes"> Ares e Hermes</label>
+                <label class="option"><input type="radio" name="q4" value="CronoseApolo"> Cronos e Apolo</label>
+                <label class="option"><input type="radio" name="q4" value="ZeuseHades"> Zeus e Hades</label>
+                <label class="option"><input type="radio" name="q4" value="ZeuseAres"> Zeus e Ares</label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+
+        <div class="question5">
+            <p>Pergunta 5: Em que período da pré-história o fogo foi descoberto?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="Neolítico"> Neolítico</label>
+                <label class="option"><input type="radio" name="q5" value="Paleolítico"> Paleolítico</label>
+                <label class="option"><input type="radio" name="q5" value="PeríododaPedraPolida"> Período da Pedra Polida</label>
+                <label class="option"><input type="radio" name="q5" value="IdadeMédia"> Idade Média</label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+    </div>
+
+    <script>
+        /* querySelectorAll retorna uma lista de elementos presentes no documento  */
+        var btns = document.querySelectorAll("button");
+        var options = document.querySelectorAll("input");
+ /*  */
+
+        /*forEach percorre todos os itens de um array */
+        /* addEventListener permite ligar um evento de um objeto a uma função que fará seu tratamento */
+            btns.forEach(btn => btn.addEventListener("click", Botao))
+            btns.forEach(btn => btn.disabled = true)
+            btns[0].disabled = false
+ 
+            options.forEach(opt => opt.disabled = true) /* significa que todos os elementos do array optionsestão sendo desabilitados, tornando-os inativos ou não selecionáveis. */
+            options[0].disabled = false /* Isso faz com que o primeiro elemento fique ativo e selecionável. */
+            options[1].disabled = false
+            options[2].disabled = false
+            options[3].disabled = false
+
+function Botao() {
+    /* getElementsByClassName retorna um vetor de objetos com todos os elementos filhos que possuem o nome da classe dada. */
+    var correct = document.getElementsByClassName("tag correct");
+    var incorrect = document.getElementsByClassName("tag incorrect");
+
+
+    /* querySelector retorna o primeiro elemento dentro do documento */
+    var qtn1 = document.querySelector('input[name=q1]:checked').value; /*  extrai o valor do botão, onde apenas um deles pode ser selecionado de cada vez, e coloca em qtn1 */
+    if (qtn1 == "Descartes") {
+        correct[0].style.display = "block";
+        incorrect[0].style.display = "none";
+        btns[1].disabled = false;
+        options[4].disabled = false
+        options[5].disabled = false
+        options[6].disabled = false
+        options[7].disabled = false
+    }
+    else {
+        incorrect[0].style.display = "block";
+        correct[0].style.display = "none";
+    }
+/* se a respota for igual descartes, a resposta sera a correta e não sera possivel responder novamente, alem de ficar visivel o feedback */
+
+    var qtn2 = document.querySelector('input[name=q2]:checked').value;
+    if (qtn2 == "Brasil") {
+        correct[1].style.display = "block";
+        incorrect[1].style.display = "none";
+        btns[2].disabled = false;
+        options[8].disabled = false
+        options[9].disabled = false
+        options[10].disabled = false
+        options[11].disabled = false
+    }
+    else {
+        incorrect[1].style.display = "block";/* exibe a mensagem de incorreto */
+        correct[1].style.display = "none";
+    }
+
+    var qtn3 = document.querySelector('input[name=q3]:checked').value;
+    if (qtn3 == "Macau") {
+        correct[2].style.display = "block";
+        incorrect[2].style.display = "none";
+        btns[3].disabled = false;
+        options[12].disabled = false
+        options[13].disabled = false
+        options[14].disabled = false
+        options[15].disabled = false
+    }
+    else {
+        incorrect[2].style.display = "block";
+        correct[2].style.display = "none";
+    }
+
+    var qtn4 = document.querySelector('input[name=q4]:checked').value;
+    if (qtn4 == "ZeuseHades") {
+        correct[3].style.display = "block";
+        incorrect[3].style.display = "none";
+        btns[4].disabled = false;
+        options[16].disabled = false
+        options[17].disabled = false
+        options[18].disabled = false
+        options[19].disabled = false
+    }
+    else {
+        incorrect[3].style.display = "block";
+        correct[3].style.display = "none";
+    }
+
+    var qtn5 = document.querySelector('input[name=q5]:checked').value;
+    if (qtn5 == "Paleolítico") {
+        correct[4].style.display = "block";
+        incorrect[4].style.display = "none";
+    }
+    else {
+        incorrect[4].style.display = "block";
+        correct[4].style.display = "none";
+    }
+}
+
+
+    </script>
+</body>
+</html> 
+
